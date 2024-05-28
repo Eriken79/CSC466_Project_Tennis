@@ -60,6 +60,7 @@ public class KMeanClustering {
 
 
         // Need to code a way to get the cluster ids back to the original dataset
+        // Need to calculate metrics such as f1 or purity
         
 
     }
