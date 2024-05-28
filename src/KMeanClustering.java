@@ -20,7 +20,7 @@ public class KMeanClustering {
         List<Double[]> dataSet = new ArrayList<>();
         List<String[]> originalData = new ArrayList<>();
         List<String> selectedColumns = Arrays.asList("Tournament", "Surface", "Rank_1", "Rank_2", "Pts_1", "Pts_2", "Odd_1", "Odd_2", "Score");
-        String headerLine;
+        String headerLine = null;
         try {
             Scanner scanner = new Scanner(new File(filePath));
             headerLine = scanner.nextLine();
@@ -60,8 +60,27 @@ public class KMeanClustering {
 
 
         // Need to code a way to get the cluster ids back to the original dataset
-        // Need to calculate metrics such as f1 or purity
-        
+
+        List<String[]> dataWithClusters = new ArrayList<>();
+        for (int i = 0; i < dataSet.size(); i++) {
+            Double[] dataPoint = dataSet.get(i);
+            String clusterId = clustering.findClosestCluster(dataPoint);
+            String[] originalRow = originalData.get(i);
+            String[] rowWithCluster = Arrays.copyOf(originalRow, originalRow.length + 1);
+            rowWithCluster[rowWithCluster.length - 1] = clusterId;
+            dataWithClusters.add(rowWithCluster);
+        }
+    
+        // Save the data with cluster information
+        try (PrintWriter writer = new PrintWriter(new File("processed_with_clusters.csv"))) {
+            writer.println(headerLine + ",Cluster"); // Write the header with the new Cluster column
+            for (String[] row : dataWithClusters) {
+                writer.println(String.join(",", row));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
