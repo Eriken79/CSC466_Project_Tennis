@@ -5,4 +5,4 @@ https://www.kaggle.com/datasets/rohit265/credit-card-eligibility-data-determinin
 
 Slideshow Link:
 
-https://docs.google.com/presentation/d/1LsH9Z3QQxYJytMIxr6beEDbfTJcc1aKuJ6oIDU7r3_Y/edit?usp=sharing
+https://docs.google.com/presentation/d/1yX14q8MBWmRZWcZktDkZTL4J9VarKRq44bJx1lO43Zs/edit?usp=sharing
