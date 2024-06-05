@@ -1,0 +1,27 @@
+(in hours)
+
+Dataset Search and Planning
+    - Erik:     2
+    - Nicholas: 2
+    - Hayden:   2
+    - Caden:    2
+
+Data Processing
+    - Nicholas: 1.5
+
+K-Means Clustering
+    - Erik:     2
+    - Nicholas: 2
+
+DBSCAN
+    - Hayden:   1
+    - Caden:    2
+
+Slide Show
+    - Erik:     .5
+    - Nicholas: .5
+    - Hayden:   1.5
+    - Caden:    .5
+
+Report
+    - Erik:     .5
