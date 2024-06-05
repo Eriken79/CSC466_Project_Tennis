@@ -11,7 +11,7 @@ Data Processing
 
 K-Means Clustering
     - Erik:     2
-    - Nicholas: 2
+    - Nicholas: 3
 
 DBSCAN
     - Hayden:   1
