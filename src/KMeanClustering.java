@@ -92,9 +92,8 @@ public class KMeanClustering {
 
     public HashMap<String, Double[]> buildCluster() {
         classifyPoint(featuresData);
-        return refiningKClusters();
+        return repeatCycle();
     }
-
 
     private void initializeModel() {
         clusters = new HashMap<>();
@@ -109,8 +108,7 @@ public class KMeanClustering {
         }
     }
 
-
-    private HashMap<String, Double[]> refiningKClusters() {
+    private HashMap<String, Double[]> repeatCycle() {
         while (numberEpochs-- > 0) {
             boolean centroidsChanged = false;
             for (String key : clusters.keySet()) {
@@ -118,7 +116,9 @@ public class KMeanClustering {
                 Double[] newCentroid = calculateMean(clusterData);
                 centroidsChanged = centroidsChanged || !Arrays.equals(clusterCentroidValues.put(key, newCentroid), newCentroid);
             }
-            if (!centroidsChanged) break;
+            if (!centroidsChanged){
+                break;
+            }
             reassignClusters();
         }
         return clusterCentroidValues;
